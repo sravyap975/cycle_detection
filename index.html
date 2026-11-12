@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Detection Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Floyd’s Cycle Detection</h1>
+            <p>Visualizing the Tortoise and the Hare Algorithm</p>
+        </header>
+
+        <section class="controls">
+            <div class="input-group">
+                <label for="nodeValues">Node Values (comma-separated):</label>
+                <input type="text" id="nodeValues" placeholder="1, 2, 3, 4, 5">
+            </div>
+            
+            <div class="input-group">
+                <label for="cycleIndex">Loop back to index (0-based, -1 for no cycle):</label>
+                <input type="number" id="cycleIndex" value="-1" min="-1">
+            </div>
+
+            <div class="button-row">
+                <button id="initBtn" class="primary-btn">Initialize & Start</button>
+                <button id="nextBtn" class="secondary-btn" disabled>Next Step</button>
+                <button id="resetBtn" class="reset-btn">Reset</button>
+            </div>
+        </section>
+
+        <section class="status-panel">
+            <div id="statusMessage">Enter values and click "Initialize" to begin.</div>
+            <div class="pointer-legend">
+                <span class="legend-item"><span class="dot slow"></span> Slow Pointer (+1)</span>
+                <span class="legend-item"><span class="dot fast"></span> Fast Pointer (+2)</span>
+            </div>
+        </section>
+
+        <main id="visualizer">
+            <div id="listContainer"></div>
+            <svg id="svgCanvas"></svg>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
